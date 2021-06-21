@@ -403,7 +403,7 @@ int Wrench::CollectTorqueableClasses(CommonOptionsParser& options_parser) {
 
 int main(int argc, const char **argv) {
   Wrench wrench;
-  
+
   // Parse command line.
   auto ExpectedParser = CommonOptionsParser::create(argc, argv, MyToolCategory);
   if (!ExpectedParser) {
@@ -418,8 +418,8 @@ int main(int argc, const char **argv) {
     return result;
   wrench.ProcessClasses();
 
-  const std::string output_dir = "/usr/local/google/home/nicohartmann/v8/v8/src/objects"; //out/torque-experiment.x64.d/gen/wrench-generated";
+  const std::string output_dir = "src/objects";
   wrench.GenerateTorqueClasses(output_dir);
-    
+
   return 0;
 }
